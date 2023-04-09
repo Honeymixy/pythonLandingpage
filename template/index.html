@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container " style="text-align: center; margin: 15rem auto; ">
+  <h1 class="p-5" style="text-decoration: underline;">
+    Welcome to CodeIgniter
+  </h1>
+  <div class="">
+    <a class="btn btn-outline-primary ml-3 " href="{% url 'register' %}" role="button" 
+    style="--bs-btn-font-size: 1.75rem;">
+      >Sign Up</a>
+    <a class="btn btn-outline-primary" href="{% url 'login' %}" role="button"
+    style="--bs-btn-font-size: 1.75rem;">
+    >>Log In</a>
+  </div>
+</div>
+{% endblock body %}

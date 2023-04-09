@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    detail
+{% endblock title %}
+
+
+{% block body %}
+<h5 class="fs-1 fw-bold text-center">Details page</h5>
+<div class="container " style="margin:8rem auto">
+    <div class="row">
+        <div class="col-8" >
+            <img  class="img-fluid" src=" {{object.image.url}}" alt=" {{object}}" style="width:100%; height: 400px;">
+        </div>
+        <div class="col-4" style="height: 300px;">
+            <h2>{{object.title}}</h2>
+            <p>{{object.description}}</p>
+            <div class="">
+                <a class="btn btn-info float-start fw-semibold" href="{% url 'update' pk=post.pk %}">Update Post</a>
+                <a class="btn btn-danger text-dark fw-semibold float-end " href="{% url 'delete' pk=post.pk %}">Delete Post</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+    
+    

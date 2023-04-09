@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div class="container  border border-danger rounded-4" style=" margin: 15rem  auto;width:30vw;">
+    <div class="row">
+      <div class="col p-5 text-center">
+        <h1>Confirm Delete</h1>
+        <p>Are you sure you want to delete {{object}}</p>
+        <form method="post">
+          {% csrf_token %}
+          <div class="d-flex justify-content-around">
+            <button class="btn btn-danger " type="submit">DELETE</button>
+          <a  href="{% url 'home' %}">Cancle</a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+{% endblock body %}

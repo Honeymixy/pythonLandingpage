@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Sign up page
+{% endblock title %}
+
+{% block body %}
+<div class="container" style="margin:10rem auto; text-align: justify;">
+  <h1 class="py-2">Register</h1>
+  <div class="row">
+      <div class="col-12">
+          <form method="POST">
+            {% csrf_token %}
+              <div class="mb-3">
+                <label for="exampleInput" class="form-label">UserName</label>
+                {{form.username}}
+            </div>
+            <div class="mb-3">
+                <label for="exampleInput" class="form-label">Email</label>
+                {{form.email}}
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                {{form.password1}}
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                {{form.password2}}
+            </div>
+            <button type="submit" class="btn btn-success">Create User</button>
+          </form>
+      </div>
+  </div>
+  <p>Already have an account <strong><a href="{% url 'login' %}">Login</a></strong></p>
+</div>
+<script>
+  let form_fields = document.getElementsByTagName('input')
+  form_fields[1].placeholder = 'username'
+  form_fields[2].placeholder = 'valid Email'
+  form_fields[3].placeholder = 'password'
+  form_fields[4].placeholder = 'Enter password again'
+
+  for (let field in form_fields) {
+    form_fields[field].className = 'form-control'
+  }
+</script>
+{% endblock body %}
